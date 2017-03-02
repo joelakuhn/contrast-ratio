@@ -97,24 +97,19 @@ label {
 		padding: .2em .5em .1em;
 		margin-top: -.1em;
 		border: thin solid rgba(0,0,0,.3);
-		background: hsla(0,0%,90%,.9);
 		color: #333;
-		text-shadow: 0 .05em 1px white;
 		font: 150% Consolas, Monaco, 'Andale Mono', 'Lucida Console', monospace;
-		box-shadow: .05em .1em .2em rgba(0,0,0,.4) inset;
 	}
 	
 		input#background {
 			padding-right: 2em;
 			margin-right: -.1em;
-			border-radius: .3em 0 0 .3em;
 			text-align: right;
 		}
 		
 		input#foreground {
 			padding-left: 2em;
 			margin-left: -.1em;
-			border-radius: 0 .3em .3em 0;
 		}
 	
 output {
@@ -273,12 +268,7 @@ button {
 		background: hsla(0,0%,100%,.6);
 		text-decoration: underline;
 	}
-	
-	button:active {
-		box-shadow: 0 1px hsla(0, 0%, 100%, .3),
-		            0 1px .3em .05em rgba(0,0,0,.6) inset;
-	}
-	
+
 .twitter-share-button {
 	position: absolute !important;
 	top: 10px;
@@ -286,5 +276,5 @@ button {
 }
 
 canvas {
-	display: none;
+	/*display: none;*/
 }
