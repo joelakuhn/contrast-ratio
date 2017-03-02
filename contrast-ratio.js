@@ -195,6 +195,27 @@ function update() {
 	}
 }
 
+function to_hex(color) {
+	function padleft(hex) {
+		if (hex.length == 0) return '0' + hex;
+		return hex;
+	}
+	var match;
+	if (match = color.match(/rgba?\(.*?(\d+).*?(\d+).*?(\d+)/)) {
+		return '#'
+		+ padleft((match[1] * 1).toString(16))
+		+ padleft((match[2] * 1).toString(16))
+		+ padleft((match[3] * 1).toString(16));
+	}
+	else if (match = color.match(/^#...$/)) {
+		return '#'
+		+ match[1] + match[1]
+		+ match[2] + match[2]
+		+ match[3] + match[3];
+	}
+	return color;
+}
+
 function colorChanged(input) {
 	input.style.width = input.value.length * .56 + 'em';
 	input.style.width = input.value.length + 'ch';
@@ -225,6 +246,9 @@ function colorChanged(input) {
 		return true;
 	}
 
+	// var hex = to_hex(color);
+	// input.nextElementSibling.value = hex;
+
 	return false;
 }
 
@@ -254,6 +278,15 @@ foreground.oninput = function() {
 	}
 };
 
+background.onchange =
+foreground.onchange = function() {
+	var valid = colorChanged(this);
+
+	if (valid) {
+		update();
+	}
+}
+
 swap.onclick = function() {
 	var backgroundColor = background.value;
 	background.value = foreground.value;
@@ -264,6 +297,8 @@ swap.onclick = function() {
 
 	update();
 };
+
+
 
 window.encodeURIComponent = (function(){
 	var encodeURIComponent = window.encodeURIComponent;

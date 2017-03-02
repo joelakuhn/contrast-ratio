@@ -7,6 +7,7 @@
 <link rel="stylesheet" href="style.css" />
 <link rel="shortcut icon"  type="image/png" href="about:blank" />
 <script src="prefixfree.min.js"></script>
+<script src="jscolor.min.js"></script>
 
 </head>
 <body>
@@ -15,12 +16,14 @@
 
 <label class="background">
 	<span>Background:</span>
-	<input id="background" value="white" autofocus />
+	<input id="background" class="jscolor" value="#fff" autofocus />
+	<!-- <input type="color" id="background-picker" /> -->
 </label>
 
 <label class="foreground">
 	<span>Text color:</span>
-	<input id="foreground" value="hsla(200,0%,0%,.7)" />
+	<input id="foreground" class="jscolor" value="#000" />
+	<!-- <input type="color" id="foreground-picker" /> -->
 </label>
 
 <output tabindex="0">
@@ -52,14 +55,6 @@
 <script src="https://leaverou.github.com/incrementable/incrementable.js" id="incrementable" async></script>
 <script src="color.js"></script>
 <script src="contrast-ratio.js"></script>
-
-<script>_gaq = [['_setAccount', 'UA-25106441-2'], ['_trackPageview']];</script>
-<script src="https://www.google-analytics.com/ga.js" async></script>
-
-<a href="https://github.com/LeaVerou/contrast-ratio"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_left_orange_ff7600.png" alt="Fork me on GitHub"></a>
-
-<a href="https://twitter.com/share" class="twitter-share-button" data-via="LeaVerou" data-size="large" data-related="w3c_wai">Tweet</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 
 </body>
 </html>
